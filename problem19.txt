@@ -1,0 +1,17 @@
+31 January
+28 February 29 on leap years (years evenly divisable by 4 and centry div by 400)
+31 March
+30 April
+31 May
+30 June
+31 July
+31 August
+30 September
+31 October
+31 November
+31 December
+
+How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+
+Plan:
+1. Check year if it is a leap year, if so, 

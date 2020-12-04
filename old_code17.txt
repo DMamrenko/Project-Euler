@@ -1,0 +1,119 @@
+public static void checkHundreds(int i) {
+		if(i/100 == 1) {
+			sb.append("one hundred");
+		}else if(i / 100 == 2){
+			sb.append("two hundred");
+		}else if(i / 100 == 3){
+			sb.append("three hundred");
+		}else if(i / 100 == 4){
+			sb.append("four hundred");
+		}else if(i / 100 == 5){
+			sb.append("five hundred");
+		}else if(i / 100 == 6){
+			sb.append("six hundred");
+		}else if(i / 100 == 7){
+			sb.append("seven hundred");
+		}else if(i / 100 == 8){
+			sb.append("eight hundred");
+		}else if(i / 100 == 9){
+			sb.append("nine hundred");
+		}
+		//checkTens(i);
+	}
+	
+	public static void checkTens(int i) {
+		int r = (i%10);
+		int j = (r/10)%10;
+		boolean beneathOneHundred = i < 100;
+		
+		if(j == 1 && beneathOneHundred) {
+			if(r == 0) {
+				sb.append(" ten");
+			}if(r == 1) {
+				sb.append(" eleven");
+			}if(r == 2) {
+				sb.append(" twelve");
+			}if(r == 3) {
+				sb.append(" thirteen");
+			}if(r == 4) {
+				sb.append(" fourteen");
+			}if(r == 5) {
+				sb.append(" fifteen");
+			}if(r == 6) {
+				sb.append(" sixteen");
+			}if(r == 7) {
+				sb.append(" seventeen");
+			}if(r == 8) {
+				sb.append(" eighteen");
+			}if(r == 9) {
+				sb.append(" nineteen");
+			}
+		}else if(r == 1 && !beneathOneHundred) {
+			if(r == 0) {
+				sb.append(" and ten");
+			}if(r == 1) {
+				sb.append(" and eleven");
+			}if(r == 2) {
+				sb.append(" and twelve");
+			}if(r == 3) {
+				sb.append(" and thirteen");
+			}if(r == 4) {
+				sb.append(" and fourteen");
+			}if(r == 5) {
+				sb.append(" and fifteen");
+			}if(r == 6) {
+				sb.append(" and sixteen");
+			}if(r == 7) {
+				sb.append(" and seventeen");
+			}if(r == 8) {
+				sb.append(" and eighteen");
+			}if(r == 9) {
+				sb.append(" and nineteen");
+			
+		}
+			
+		if(j == 2){
+			sb.append(" and twenty");
+		}else if(j == 3){
+			sb.append(" and thirty");
+		}else if(j == 4){
+			sb.append(" and fourty");
+		}else if(j == 5){
+			sb.append(" and fifty");
+		}else if(j == 6){
+			sb.append(" and sixy");
+		}else if(j == 7){
+			sb.append(" and seventy");
+		}else if(j == 8){
+			sb.append(" and eighty");
+		}else if(j == 9){
+			sb.append(" and ninety");
+		}
+		checkDigits(i);
+		}
+	}
+	public static int checkDigits(int i) {
+		int r = (i%10);
+		if(i%10 == 1) {
+			sb.append(" one\n");
+		}else if(i % 10 == 2){
+			sb.append(" two\n");
+		}else if(i % 10 == 3){
+			sb.append(" three\n");
+		}else if(i % 10 == 4){
+			sb.append(" four\n");
+		}else if(i % 10 == 5){
+			sb.append(" five\n");
+		}else if(i % 10 == 6){
+			sb.append(" six\n");
+		}else if(i % 10 == 7){
+			sb.append(" seven\n");
+		}else if(i % 10 == 8){
+			sb.append(" eight\n");
+		}else if(i % 10 == 9){
+			sb.append(" nine\n");
+		}
+		
+		
+	return r;
+	}

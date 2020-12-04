@@ -1,0 +1,42 @@
+package projects;
+
+import java.util.ArrayList;
+
+public class Problem14 {
+	static int greatest_sequence_count = 0;
+	static int longest_sequence_originator = 0;
+	public static void main(String[] args) {
+		/*goes through each number below 1,000,000, starting at 999,999 and descending,
+		 * sends to the CollatzSequence method 
+		 */
+		for(int i = 999999; i > 1; i--) {
+			collatzSequenceLengthCounter(i);
+		}
+		
+	}
+	public static void collatzSequenceLengthCounter(int intake) {
+		//start with a counter: keeps track of how many numbers are in the sequence
+		int count = 0;
+		int hold_intakes_value = intake;
+		//continue the sequence until it gets to 1
+		while(intake != 1) {
+			if(intake%2 == 0) {
+				intake = intake/2;
+				count++;
+			}else {
+				intake = ((intake*3) + 1);
+				count++;
+			}
+		}
+		compareLength(count, hold_intakes_value);
+	}
+	public static void compareLength(int count, int number) {
+		if(count > greatest_sequence_count) {
+			greatest_sequence_count = count;
+			System.out.println("The longest sequence has " + greatest_sequence_count + " elements, and the origin of the sequence is: " + number);
+		}
+	}
+	
+	
+	
+}

@@ -1,0 +1,35 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Problem15 {
+	
+	public static void main(String[] args) {
+		final long startTime = System.currentTimeMillis();
+		createPascalsTriangle(21);
+		final long endTime = System.currentTimeMillis();
+		NumberFormat formatter = new DecimalFormat("#0.00000");
+		System.out.print("Execution time is " + formatter.format((endTime - startTime) / 1000d) + " seconds");
+	}
+	
+	public static void createPascalsTriangle(int dimension) {
+		long [][] ptri = new long[dimension][dimension];
+		//making the top row and left column all 1s
+		for(int i = 0; i < ptri.length; i++) {
+			ptri[i][0] = 1;
+			ptri[0][i] = 1;
+		}
+		//outer loop deals with the origin of the arms, starts at 1 bc (1, 1) ... (2, 2) ... (3, 3)
+		for(int s = 1; s < dimension; s++) {
+			//inner loop deals with the extension of the "arms" 
+			for(int a = 1; a < dimension; a++) {
+				ptri[s][a] = ptri[s-1][a] + ptri[s][a-1];
+				ptri[a][s] = ptri[a-1][s] + ptri[a][s-1];
+			}
+		} 
+	System.out.println("In a 20 by 20 grid, there are " + ptri[20][20] + " ways to take a southeastern path.");
+	
+	}
+}
+
